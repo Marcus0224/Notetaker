@@ -22,6 +22,7 @@ An application that can be used to write and save notes and uses Express.js back
 - SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 # Screenshots
+![]
 
 # Tech used 
 Node.js
