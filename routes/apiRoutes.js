@@ -7,7 +7,7 @@ const uuid = require('uuid');
 //Get request
 
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index'));
+    saveData.retrieveNotes().then(data => res.json(data))
 });
 
 // Post request

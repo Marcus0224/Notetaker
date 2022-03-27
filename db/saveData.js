@@ -20,6 +20,13 @@ class Save {
         return this.read().then(notes => {
             let parsedNotes;
             try {
+                notes = JSON.parse(notes)
+                notes.forEach(note => {
+                    if (!note.id) {
+                        note.id = uuidv4()
+                    }
+                })
+                notes = JSON.stringify(notes)
                 parsedNotes = [].concat(JSON.parse(notes));
             } catch (err) {
                 parsedNotes = [];
