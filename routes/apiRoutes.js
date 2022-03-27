@@ -11,11 +11,11 @@ router.get('/notes', (req, res) => {
 });
 
 // Post request
-router.post('/notes', (req,res) => {
+router.post('/notes', (req, res) => {
     req.body.id = uuid.v4();
     saveData
         .addNote()
-        .then(notes => res.json(notes))
+        .then(note => res.json(note))
         .catch(err => res.status(400).json(err));
 });
 
