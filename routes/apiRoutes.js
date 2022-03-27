@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const { appendFile } = require('fs');
-const saveData = require('../db/saveData');
+const saveData = require('../Develop/db/saveData');
 const uuid = require('uuid');
 
 //Get request
@@ -11,11 +11,11 @@ router.get('/notes', (req, res) => {
 });
 
 // Post request
-router.post('/notes', (req, res) => {
+router.post('/notes', (req,res) => {
     req.body.id = uuid.v4();
     saveData
-        .addNote(req.body)
-        .then(note => res.json(note))
+        .addNote()
+        .then(notes => res.json(notes))
         .catch(err => res.status(400).json(err));
 });
 
